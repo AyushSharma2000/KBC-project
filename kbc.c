@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <math.h>
 char lfarr[]={'5','F'};
@@ -218,13 +217,22 @@ void lifeline(int lfline,int q,int *j)/*handling lifelines*/
         question_bank(13,lfline);
     }
 }
-int check_ans(int ch,int n)
+int check_ans(int ch,int n,int *temp)
 {/*checking answer,printing formal msgs*/
     int ans[]={1,2,3,2,2,2,2,3,4,1,1,1,1};
-    if(ch!=ans[n-1])
+    if(*(temp+1)==2){
+    if(ch!=ans[12])
         n=n+13;
     else
         n=n+1;
+    }
+    else
+    {
+        if(ch!=ans[n-1])
+            n=n+13;
+        else
+            n=n+1;
+    }
     return n;
         
 }
@@ -234,10 +242,10 @@ void prize_money(int qtn)
     int prize;
     int orig_no;
     int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};
-    if(qtn>=13)
-        orig_no=qtn-13;
-    else
+    if(qtn<=12)
         prize=prize_arr[qtn];
+    else
+        orig_no=qtn-13;
     for(int i=0;i<2;i++)
     {
         if(orig_no>=breakpoints[i] && orig_no<breakpoints[i+1])
@@ -245,6 +253,11 @@ void prize_money(int qtn)
     }
     printf("%dRs.",prize);
         
+}
+void clear_arr(int *arr)
+{
+    for(int i=0;i<2;i++)
+        *(arr+i)=0;
 }
 void game_mech()
 {
@@ -257,6 +270,7 @@ void game_mech()
         int count=0;
         int ch,temp1,temp;
         int life[2];
+        clear_arr(&life[0]);
         question_bank(i,0);
         if(i!=1){
         printf("Do you want to quit and take the amount accrued or play on? Press 0 or 1 to choose the respective option");
@@ -291,12 +305,12 @@ void game_mech()
         printf("Enter your answer: ");
             scanf("%d",&ch);
             printf("%d",ch);
-            i=check_ans(ch,i);
+            i=check_ans(ch,i,&life[0]);
         if(i<=12)
-            printf("\nCorrect answer!!!\n");
+            printf("\nCorrect answer!!!%d \n",life[1]);
     }
     if(i>13)
-        printf("Sorry.You inputted a wrong answer.You will be awarded a sum of\t");
+        printf("Sorry.You inputted a wrong answer.You will be awarded a sum of \t");
     else
         printf("Congratulations on winning a sum of\t");
     if(quit==0)
