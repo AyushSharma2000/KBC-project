@@ -112,7 +112,7 @@ void question_bank(int num,int lf)/*another method required to print options acc
     {
         case 1:
         printf("1> Which country invented tea?\n");
-        printf("(1)China\t\t\t\t (2)India\n(3)Great Britain\t\t\t\t (4)France \n");
+        printf("(1)China\t\t\t\t (2)India\n(3)Great Britain\t\t\t (4)France \n");
         break;
         case 2:
         printf("2> A popular expression goes “A bird in the hand is worth two in the” what?\n");
