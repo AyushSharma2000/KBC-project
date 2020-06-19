@@ -246,6 +246,11 @@ void prize_money(int qtn)
     printf("%dRs.",prize);
         
 }
+void clear_arr(int *arr)/*resets the cache array handling the lifelines used during each question for using in the next question*/
+{
+    for(int i=0;i<2;i++)
+        *(arr+i)=0;
+}
 void game_mech()
 {
     int quit=0;
@@ -257,6 +262,7 @@ void game_mech()
         int count=0;
         int ch,temp1,temp;
         int life[2];
+        clear_arr(&life[0]);/*for clearing the flip the question bug*/
         question_bank(i,0);
         if(i!=1){
         printf("Do you want to quit and take the amount accrued or play on? Press 0 or 1 to choose the respective option: ");
