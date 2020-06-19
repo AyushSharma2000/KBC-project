@@ -284,7 +284,7 @@ void game_mech()
                 lifeline(temp1,i,&life[0]);
                 if (count_lifeline==1)
                 {
-                    printf("Do you want another lifeline??\n");
+                    printf("Do you want another lifeline?? Press 0 for NO 1 for YES\n");
                     scanf("%d",&temp);
                 }
             }
