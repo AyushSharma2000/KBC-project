@@ -124,15 +124,15 @@ void question_bank(int num,int lf)/*another method required to print options acc
         break;
         case 4:
         printf("4> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t\t (4)Weak \n");
+        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t (4)Weak \n");
         break;
         case 5:
-        printf("5> What would you measure on the beaufort scale?\n");
-        printf("(1)Atmospheric Pressure\t\t\t\t (2)Wind Speed\n(3)Precipitation\t\t\t\t (4)Earthquake Intensity \n");
+        printf("5> What would you measure on the Beaufort scale?\n");
+        printf("(1)Atmospheric Pressure\t\t\t (2)Wind Speed\n(3)Precipitation\t\t\t (4)Earthquake Intensity \n");
         break;
         case 6:
         printf("6> Which of the following men does not have a chemical element named for him?\n");
-        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4) Enrico Fermi \n");
+        printf("(1)Albert Einstein\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4) Enrico Fermi \n");
         break;
         case 7:
         printf("7> Which of the following landlocked country is entirely contained within another country?\n");
