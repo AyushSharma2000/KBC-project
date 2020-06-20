@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <math.h>
 char lfarr[]={'5','F'};
@@ -218,34 +217,45 @@ void lifeline(int lfline,int q,int *j)/*handling lifelines*/
         question_bank(13,lfline);
     }
 }
-int check_ans(int ch,int n)
+int check_ans(int ch,int n,int *temp)
 {/*checking answer,printing formal msgs*/
     int ans[]={1,2,3,2,2,2,2,3,4,1,1,1,1};
-    if(ch!=ans[n-1])
+    if(*(temp+1)==2){
+    if(ch!=ans[12])
         n=n+13;
     else
         n=n+1;
+    }
+    else
+    {
+        if(ch!=ans[n-1])
+            n=n+13;
+        else
+            n=n+1;
+    }
     return n;
         
 }
 void prize_money(int qtn)
 {
-    int breakpoints[]={0,4,12};
+    int breakpoints[]={0,4,8,12};
     int prize;
     int orig_no;
     int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};
-    if(qtn>=13)
-        orig_no=qtn-13;
-    else
+    if(qtn<=12)
         prize=prize_arr[qtn];
-    for(int i=0;i<2;i++)
+    else{
+        orig_no=qtn-13;
+    for(int i=0;i<=3;i++)
     {
-        if(orig_no>=breakpoints[i] && orig_no<breakpoints[i+1])
+        if(orig_no>=breakpoints[i])
             prize=prize_arr[breakpoints[i]];
     }
-    printf("%dRs.",prize);
+    }
+    printf("Rs. %d",prize);
         
 }
+
 void clear_arr(int *arr)/*resets the cache array handling the lifelines used during each question for using in the next question*/
 {
     for(int i=0;i<2;i++)
@@ -262,6 +272,7 @@ void game_mech()
         int count=0;
         int ch,temp1,temp;
         int life[2];
+
         clear_arr(&life[0]);/*for clearing the flip the question bug*/
         question_bank(i,0);
         if(i!=1){
@@ -294,21 +305,33 @@ void game_mech()
                     scanf("%d",&temp);
                 }
             }
+            int check=0;
         printf("Enter your answer: ");
             scanf("%d",&ch);
             printf("%d",ch);
-            i=check_ans(ch,i);
+            if(i==12)
+                {i=check_ans(ch,i,&life[0]);
+                 if(i==13)
+                    {check==1;
+                     i=i-1;
+                    }
+                }
+            else
+                i=check_ans(ch,i,&life[0]);
+            if(check==1)
+                break;
         if(i<=12)
-            printf("\nCorrect answer!!!\n");
+            printf("\nCorrect answer!!! \n");
     }
     if(i>13)
-        printf(" \n Sorry.You inputted a wrong answer.You will be awarded a sum of\t");
-    else
-        printf("Congratulations on winning a sum of\t");
-    if(quit==0)
-        prize_money(i);
-    else
+        printf("\nSorry.You inputted a wrong answer.You will be awarded a sum of  \t");
+    else{
+        printf("Congratulations on winning a sum of \t");
+        
+    }if((quit==1)||(i==13&& quit==0))
         prize_money(i-1);
+    else if(i>=13)
+        prize_money(i);
 }
 void main()
 {
