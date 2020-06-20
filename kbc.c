@@ -302,7 +302,7 @@ void game_mech()
             printf("\nCorrect answer!!!\n");
     }
     if(i>13)
-        printf("Sorry.You inputted a wrong answer.You will be awarded a sum of\t");
+        printf(" \n Sorry.You inputted a wrong answer.You will be awarded a sum of\t");
     else
         printf("Congratulations on winning a sum of\t");
     if(quit==0)
