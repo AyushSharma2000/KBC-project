@@ -131,7 +131,7 @@ void question_bank(int num,int lf)/*another method required to print options acc
         break;
         case 6:
         printf("6> Which of the following men does not have a chemical element named for him?\n");
-        printf("(1)Albert Einstein\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4) Enrico Fermi \n");
+        printf("(1)Albert Einstein\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4)Enrico Fermi \n");
         break;
         case 7:
         printf("7> Which of the following landlocked country is entirely contained within another country?\n");
@@ -324,7 +324,7 @@ void game_mech()
             printf("\nCorrect answer!!! \n");
     }
     if(i>13)
-        printf("\nSorry.You inputted a wrong answer.You will be awarded a sum of  \t");
+        printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
     else{
         printf("Congratulations on winning a sum of \t");
         
@@ -350,7 +350,7 @@ void main()
             }
             else
             {
-                printf("Invalid Option.Re-enter");
+                printf("Invalid Option. Re-enter");
                 scanf("%c",&ch);
             }
     }
