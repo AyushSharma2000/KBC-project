@@ -47,54 +47,54 @@ void alt_question_bank(int num)
     {
         case 1:
         printf("1> Which country invented tea?\n");
-        printf("(1)China\t\t\t\t (2)India");
+        printf("(1)China\t\t\t\t (2)India \n");
         break;
         case 2:
         printf("2> A popular expression goes “A bird in the hand is worth two in the” what?\n");
-        printf("(2)Bush\t\t\t\t(3)Tree");
+        printf("(2)Bush\t\t\t\t(3)Tree \n");
         break;
         case 3:
         printf("3> Which of the following is not a roman numeral?\n");
-        printf("(2)L\t\t\t\t(3)G");
+        printf("(2)L\t\t\t\t(3)G \n");
         break;
         case 4:
         printf("4> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction");
+        printf("(1)Gravity\t\t\t\t (2)Friction \n");
         break;
         case 5:
         printf("5> What would you measure on the beaufort scale?\n");
-        printf("(2)Wind Speed\t\t\t\t(3)Precipitation");
+        printf("(2)Wind Speed\t\t\t\t(3)Precipitation \n");
         break;
         case 6:
         printf("6> Which of the following men does not have a chemical element named for him?\n");
-        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton");
+        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton \n");
         break;
         case 7:
         printf("7> Which of the following landlocked country is entirely contained within another country?\n ");
-        printf("(1)Luxembourg\t\t\t\t (2Lesotho");
+        printf("(1)Luxembourg\t\t\t\t (2Lesotho \n");
         break;
         case 8:
         printf("8> Which of these viruses takes it's name from a place in Malaysia?\n");
-        printf("(2)Influenza\t\t\t\t (3)Nipah");
+        printf("(2)Influenza\t\t\t\t (3)Nipah \n");
         break;
         case 9:
         printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
-        printf("(3)Jalandhar\t\t\t\t (4)Arun");
+        printf("(3)Jalandhar\t\t\t\t (4)Arun \n");
         break;
         case 10:
         printf("10> 'do no evil' is tagline of which company?\n");
-        printf("(1)Google\t\t\t\t (4)Apple");
+        printf("(1)Google\t\t\t\t (4)Apple \n");
         break;
         case 11:
         printf("11> After nearly 70 days underground,33 men were dramatically rescued in 2010 from a mine in what country?\n");
-        printf("(1)Chile\t\t\t\t (2)India");        
+        printf("(1)Chile\t\t\t\t (2)India \n");        
         case 12:
         printf("12> Aristotle wrote that what animal, though immune from other illnesses, is occasionally subject to “flatulency”?\n");
-        printf("(1)Elephant\t\t\t\t (3)Kangaroo");
+        printf("(1)Elephant\t\t\t\t (3)Kangaroo \n");
         break;
         case 13:
         printf("Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
-        printf("(1)Harper Lee\t\t\t\t(3)Emily Bronte");
+        printf("(1)Harper Lee\t\t\t\t(3)Emily Bronte \n");
         break;
     }
 }
@@ -111,7 +111,7 @@ void question_bank(int num,int lf)/*another method required to print options acc
     {
         case 1:
         printf("1> Which country invented tea?\n");
-        printf("(1)China\t\t\t\t (2)India\n(3)Great Britain\t\t\t\t (4)France \n");
+        printf("(1)China\t\t\t\t (2)India\n(3)Great Britain\t\t\t (4)France \n");
         break;
         case 2:
         printf("2> A popular expression goes “A bird in the hand is worth two in the” what?\n");
@@ -123,43 +123,43 @@ void question_bank(int num,int lf)/*another method required to print options acc
         break;
         case 4:
         printf("4> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t\t (4)Weak");
+        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t (4)Weak \n");
         break;
         case 5:
-        printf("5> What would you measure on the beaufort scale?\n");
-        printf("(1)Atmospheric Pressure\t\t\t\t (2)Wind Speed\n(3)Precipitation\t\t\t\t (4)Earthquake Intensity");
+        printf("5> What would you measure on the Beaufort scale?\n");
+        printf("(1)Atmospheric Pressure\t\t\t (2)Wind Speed\n(3)Precipitation\t\t\t (4)Earthquake Intensity \n");
         break;
         case 6:
         printf("6> Which of the following men does not have a chemical element named for him?\n");
-        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4)");
+        printf("(1)Albert Einstein\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4) Enrico Fermi \n");
         break;
         case 7:
         printf("7> Which of the following landlocked country is entirely contained within another country?\n");
-        printf("(1)Luxembourg\t\t\t\t (2)Lesotho\n(3)Burkina Faso\t\t\t\t (4)Mongolia");
+        printf("(1)Luxembourg\t\t\t\t (2)Lesotho\n(3)Burkina Faso\t\t\t\t (4)Mongolia \n");
         break;
         case 8:
         printf("8> Which of these viruses takes it's name from a place in Malaysia?\n");
-        printf("(1)Corona\t\t\t\t (2)Influenza\n(3)Nipah\t\t\t\t (4)Ebola");
+        printf("(1)Corona\t\t\t\t (2)Influenza\n(3)Nipah\t\t\t\t (4)Ebola \n");
         break;
         case 9:
         printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
-        printf("(1)Chitragupt\t\t\t\t (2)Matli\n(3)Jalandhar\t\t\t\t (4)Arun");
+        printf("(1)Chitragupt\t\t\t\t (2)Matli\n(3)Jalandhar\t\t\t\t (4)Arun \n");
         break;
         case 10:
-        printf("10>'do no evil' is tagline of which company?\n");
-        printf("(1)Google\t\t\t\t (2)Facebook\n(3)Microsoft\t\t\t\t (4)Apple");
+        printf("10> 'do no evil' is tagline of which company?\n");
+        printf("(1)Google\t\t\t\t (2)Facebook\n(3)Microsoft\t\t\t\t (4)Apple \n");
         break;
         case 11:
         printf("11> After nearly 70 days underground,33 men were dramatically rescued in 2010 from a mine in what country?\n");
-        printf("(1)Chile\t\t\t\t (2)India\n(3)China\t\t\t\t (4)Brazil");
+        printf("(1)Chile\t\t\t\t (2)India\n(3)China\t\t\t\t (4)Brazil \n");
         break;
         case 12:
         printf("12> Aristotle wrote that what animal, though immune from other illnesses, is occasionally subject to “flatulency”?\n");
-        printf("(1)Elephant\t\t\t\t (2)Dog\n(3)Kangaroo\t\t\t\t (4)Duck");
+        printf("(1)Elephant\t\t\t\t (2)Dog\n(3)Kangaroo\t\t\t\t (4)Duck \n");
         break;
         case 13:
-        printf("13>Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
-        printf("(1)Harper Lee\t\t\t\t (2)Ralph Elison\n(3)Emily Bronte\t\t\t\t (4)J.D.Salinger");
+        printf("13> Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
+        printf("(1)Harper Lee\t\t\t\t (2)Ralph Elison\n(3)Emily Bronte\t\t\t\t (4)J.D.Salinger \n");
         break;
     }}
 }
@@ -238,23 +238,25 @@ int check_ans(int ch,int n,int *temp)
 }
 void prize_money(int qtn)
 {
-    int breakpoints[]={0,4,12};
+    int breakpoints[]={0,4,8,12};
     int prize;
     int orig_no;
     int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};
     if(qtn<=12)
         prize=prize_arr[qtn];
-    else
+    else{
         orig_no=qtn-13;
-    for(int i=0;i<2;i++)
+    for(int i=0;i<=3;i++)
     {
-        if(orig_no>=breakpoints[i] && orig_no<breakpoints[i+1])
+        if(orig_no>=breakpoints[i])
             prize=prize_arr[breakpoints[i]];
     }
-    printf("%dRs.",prize);
+    }
+    printf("Rs. %d",prize);
         
 }
-void clear_arr(int *arr)
+
+void clear_arr(int *arr)/*resets the cache array handling the lifelines used during each question for using in the next question*/
 {
     for(int i=0;i<2;i++)
         *(arr+i)=0;
@@ -270,10 +272,11 @@ void game_mech()
         int count=0;
         int ch,temp1,temp;
         int life[2];
-        clear_arr(&life[0]);
+
+        clear_arr(&life[0]);/*for clearing the flip the question bug*/
         question_bank(i,0);
         if(i!=1){
-        printf("Do you want to quit and take the amount accrued or play on? Press 0 or 1 to choose the respective option");
+        printf("Do you want to quit and take the amount accrued or play on? Press 0 or 1 to choose the respective option: ");
         if(leave()==0){
             quit=1;
             break;}}
@@ -298,25 +301,37 @@ void game_mech()
                 lifeline(temp1,i,&life[0]);
                 if (count_lifeline==1)
                 {
-                    printf("Do you want another lifeline??\n");
+                    printf("Do you want another lifeline?? Press 0 for NO 1 for YES\n");
                     scanf("%d",&temp);
                 }
             }
+            int check=0;
         printf("Enter your answer: ");
             scanf("%d",&ch);
             printf("%d",ch);
-            i=check_ans(ch,i,&life[0]);
+            if(i==12)
+                {i=check_ans(ch,i,&life[0]);
+                 if(i==13)
+                    {check==1;
+                     i=i-1;
+                    }
+                }
+            else
+                i=check_ans(ch,i,&life[0]);
+            if(check==1)
+                break;
         if(i<=12)
-            printf("\nCorrect answer!!!%d \n",life[1]);
+            printf("\nCorrect answer!!! \n");
     }
     if(i>13)
-        printf("Sorry.You inputted a wrong answer.You will be awarded a sum of \t");
-    else
-        printf("Congratulations on winning a sum of\t");
-    if(quit==0)
-        prize_money(i);
-    else
+        printf("Sorry.You inputted a wrong answer.You will be awarded a sum of  \t");
+    else{
+        printf("Congratulations on winning a sum of \t");
+        
+    }if((quit==1)||(i==13&& quit==0))
         prize_money(i-1);
+    else if(i>=13)
+        prize_money(i);
 }
 void main()
 {
