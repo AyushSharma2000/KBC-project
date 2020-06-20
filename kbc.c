@@ -312,7 +312,7 @@ void game_mech()
             if(i==12)
                 {i=check_ans(ch,i,&life[0]);
                  if(i==13)
-                    {check==1;
+                    {check=1;
                      i=i-1;
                     }
                 }
@@ -328,9 +328,9 @@ void game_mech()
     else{
         printf("Congratulations on winning a sum of \t");
         
-    }if((quit==1)||(i==13&& quit==0))
+    }if((quit==1)
         prize_money(i-1);
-    else if(i>=13)
+    else if(i>=12)
         prize_money(i);
 }
 void main()
