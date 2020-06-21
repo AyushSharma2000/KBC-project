@@ -6,27 +6,28 @@ void first_screen()
 {
     printf("\t\t\t\t********************************************************************");
     printf("\n");
-    printf("\t\t\t\t**************WELCOME TO THE KBC GAME****************");
+    printf("\t\t\t\t\t**************WELCOME TO THE KBC GAME****************");
     printf("\n");
     printf("\t\t\t\t********************************************************************");
     int total_questions=12;
     int i=0;
     int b=0;
     int base_value=50000;
+    int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};
     printf("\n");
     printf("\n");
     while(i<total_questions)/*displays the total questions and the corresponding amount winnable*/
-    {   
-        int num_of_questions=i+1;/*question starts from one,indexing has been done from 0*/
-        printf("\n");
-        b=base_value*num_of_questions;/*the base amount multiplies by the number of questions*/
-        if(num_of_questions!=4 && num_of_questions!=8 && num_of_questions!=12)
-            printf("QUESTION NUMBER %d valued at  %d" ,num_of_questions,b);
+    {   int question_no=i+1;
+        if(question_no!=4 && question_no!=8 && question_no!=12)
+            printf("QUESTION NUMBER %d valued at Rs. %d\n" ,question_no,prize_arr[question_no]);
         else    /*checkpoints at 4th and 8th question, 12th is last question*/
         {
-            printf("QUESTION NUMBER %d valued at  %d" ,num_of_questions,b);
+            printf("QUESTION NUMBER %d valued at Rs. %d" ,question_no,prize_arr[question_no]);
             printf("\n");
-            printf("————————————————————");
+            if(question_no!=12)
+            printf("——————————CHECKPOINT——————————\n");
+            else
+            printf("——————————GAME END————————————\n");
         }
         i+=1;
     }
