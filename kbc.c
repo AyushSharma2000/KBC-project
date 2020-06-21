@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 char lfarr[]={'5','F'};
 char cache[2];
 void first_screen()
