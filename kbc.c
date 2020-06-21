@@ -47,20 +47,20 @@ void alt_question_bank(int num)
     switch(num)
     {
         case 1:
-        printf("1> Which country invented tea?\n");
-        printf("(1)China\t\t\t\t (2)India \n");
+        printf("1> A person described as 'Goth' usually wears what color of clothes?\n");
+        printf("(1)Black\t\t\t\t (2)Khaki \n");
         break;
         case 2:
-        printf("2> A popular expression goes “A bird in the hand is worth two in the” what?\n");
-        printf("(2)Bush\t\t\t\t(3)Tree \n");
+        printf("2> On Thanksgiving, which of these items is traditionally stuffed and then carved?\n");
+        printf("(2)Turkey\t\t\t\t(3)Punpkin \n");
         break;
         case 3:
         printf("3> Which of the following is not a roman numeral?\n");
         printf("(2)L\t\t\t\t(3)G \n");
         break;
         case 4:
-        printf("4> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction \n");
+        printf("4> A cranky person is said to have gotten up 'on the wrong side of the' what?\n");
+        printf("(1)Bed\t\t\t\t (2)Bam \n");
         break;
         case 5:
         printf("5> What would you measure on the beaufort scale?\n");
@@ -71,12 +71,12 @@ void alt_question_bank(int num)
         printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton \n");
         break;
         case 7:
-        printf("7> Which of the following landlocked country is entirely contained within another country?\n ");
-        printf("(1)Luxembourg\t\t\t\t (2Lesotho \n");
+        printf("7> Which of the following is not among the four fundamental forces of nature?\n");
+        printf("(1)Gravity\t\t\t\t (2)Friction \n");
         break;
         case 8:
-        printf("8> Which of these viruses takes it's name from a place in Malaysia?\n");
-        printf("(2)Influenza\t\t\t\t (3)Nipah \n");
+        printf("8> Which of the following was a literary movement in the U.S. during the 1920s\n");
+        printf("(2)Romanticism\t\t\t\t (3)Harlem Renaissance \n");
         break;
         case 9:
         printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
@@ -111,20 +111,20 @@ void question_bank(int num,int lf)/*another method required to print options acc
     switch (num)
     {
         case 1:
-        printf("1> Which country invented tea?\n");
-        printf("(1)China\t\t\t\t (2)India\n(3)Great Britain\t\t\t (4)France \n");
+        printf("1> A person described as 'Goth' usually wears what color of clothes?\n");
+        printf("(1)Black\t\t\t\t (2)Khaki\n(3)fluorescent\t\t\t\t (4)White \n");
         break;
         case 2:
-        printf("2> A popular expression goes “A bird in the hand is worth two in the” what?\n");
-        printf("(1)Pot\t\t\t\t (2)Bush\n(3)Tree\t\t\t\t (4)window \n");
+        printf("2> On Thanksgiving, which of these items is traditionally stuffed and then carved?\n");
+        printf("(1)Potato\t\t\t\t (2)Turkey\n(3)Pumpkin\t\t\t\t (4)Chicken \n");
         break;
         case 3:
         printf("3> Which of the following is not a roman numeral?\n");
         printf("(1)M\t\t\t\t (2)L\n(3)G\t\t\t\t (4)D \n");
         break;
         case 4:
-        printf("4> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t (4)Weak \n");
+        printf("4> A cranky person is said to have gotten up 'on the wrong side of the' what?\n");
+        printf("(1)Bed\t\t\t\t (2)Bam\n(3)Law\t\t\t\t (4)Fence \n");
         break;
         case 5:
         printf("5> What would you measure on the Beaufort scale?\n");
@@ -135,12 +135,12 @@ void question_bank(int num,int lf)/*another method required to print options acc
         printf("(1)Albert Einstein\t\t\t (2)Issac Newton\n(3)Neils Bohr\t\t\t\t (4)Enrico Fermi \n");
         break;
         case 7:
-        printf("7> Which of the following landlocked country is entirely contained within another country?\n");
-        printf("(1)Luxembourg\t\t\t\t (2)Lesotho\n(3)Burkina Faso\t\t\t\t (4)Mongolia \n");
+        printf("7> Which of the following is not among the four fundamental forces of nature?\n");
+        printf("(1)Gravity\t\t\t\t (2)Friction\n(3)Electromagnetic\t\t\t (4)Weak \n");
         break;
         case 8:
-        printf("8> Which of these viruses takes it's name from a place in Malaysia?\n");
-        printf("(1)Corona\t\t\t\t (2)Influenza\n(3)Nipah\t\t\t\t (4)Ebola \n");
+        printf("8> Which of the following was a literary movement in the U.S. during the 1920s \n");
+        printf("(1)Gothic Revival\t\t\t (2)Romanticism\n(3)Harlem Renaissance\t\t\t (4)Magic Realism \n");
         break;
         case 9:
         printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
@@ -220,7 +220,7 @@ void lifeline(int lfline,int q,int *j)/*handling lifelines*/
 }
 int check_ans(int ch,int n,int *temp)
 {/*checking answer,printing formal msgs*/
-    int ans[]={1,2,3,2,2,2,2,3,4,1,1,1,1};
+    int ans[]={1,2,3,1,2,2,2,3,4,1,1,1,1};
     if(*(temp+1)==2){
     if(ch!=ans[12])
         n=n+13;
