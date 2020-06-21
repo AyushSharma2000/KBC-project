@@ -328,7 +328,7 @@ void game_mech()
     else{
         printf("Congratulations on winning a sum of \t");
         
-    }if((quit==1)
+    }if(quit==1)
         prize_money(i-1);
     else if(i>=12)
         prize_money(i);
