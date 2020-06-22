@@ -42,6 +42,64 @@ void first_screen()/*displays the number of questions,prize for each question,ch
     
 }
 
+void alt_question_bank(int num)/*for implementing the 50/50 lifeline*/
+{/*num is the question number for which the lifeline is invoked*/
+    switch(num)
+    {
+        case 1:
+        printf("1> A person described as 'Goth' usually wears what color of clothes?\n");
+        printf("(1)Black\t\t\t\t (2)Khaki \n");
+        break;
+        case 2:
+        printf("2> On Thanksgiving, which of these items is traditionally stuffed and then carved?\n");
+        printf("(2)Turkey\t\t\t\t(3)Punpkin \n");
+        break;
+        case 3:
+        printf("3> Which of the following is not a roman numeral?\n");
+        printf("(2)L\t\t\t\t(3)G \n");
+        break;
+        case 4:
+        printf("4> A cranky person is said to have gotten up 'on the wrong side of the' what?\n");
+        printf("(1)Bed\t\t\t\t (2)Bam \n");
+        break;
+        case 5:
+        printf("5> What would you measure on the beaufort scale?\n");
+        printf("(2)Wind Speed\t\t\t\t(3)Precipitation \n");
+        break;
+        case 6:
+        printf("6> Which of the following men does not have a chemical element named for him?\n");
+        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton \n");
+        break;
+        case 7:
+        printf("7> Which of the following is not among the four fundamental forces of nature?\n");
+        printf("(1)Gravity\t\t\t\t (2)Friction \n");
+        break;
+        case 8:
+        printf("8> Which of the following was a literary movement in the U.S. during the 1920s\n");
+        printf("(2)Romanticism\t\t\t\t (3)Harlem Renaissance \n");
+        break;
+        case 9:
+        printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
+        printf("(3)Jalandhar\t\t\t\t (4)Arun \n");
+        break;
+        case 10:
+        printf("10> 'do no evil' is tagline of which company?\n");
+        printf("(1)Google\t\t\t\t (4)Apple \n");
+        break;
+        case 11:
+        printf("11> After nearly 70 days underground,33 men were dramatically rescued in 2010 from a mine in what country?\n");
+        printf("(1)Chile\t\t\t\t (2)India \n");        
+        case 12:
+        printf("12> Aristotle wrote that what animal, though immune from other illnesses, is occasionally subject to “flatulency”?\n");
+        printf("(1)Elephant\t\t\t\t (3)Kangaroo \n");
+        break;
+        case 13:
+        printf("Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
+        printf("(1)Harper Lee\t\t\t\t(3)Emily Bronte \n");
+        break;
+    }
+}
+
 void question_bank(int num,int lf)/*main question bank for accessing questions and displaying options*/
 {/*num represents the present question number,lf represents the lifeline chosen(if any)*/
     if ( lf==1)/*redirecting to the other question bank for 50/50 lifeline*/
@@ -104,64 +162,6 @@ void question_bank(int num,int lf)/*main question bank for accessing questions a
     }}
 }
 
-void alt_question_bank(int num)/*for implementing the 50/50 lifeline*/
-{/*num is the question number for which the lifeline is invoked*/
-    switch(num)
-    {
-        case 1:
-        printf("1> A person described as 'Goth' usually wears what color of clothes?\n");
-        printf("(1)Black\t\t\t\t (2)Khaki \n");
-        break;
-        case 2:
-        printf("2> On Thanksgiving, which of these items is traditionally stuffed and then carved?\n");
-        printf("(2)Turkey\t\t\t\t(3)Punpkin \n");
-        break;
-        case 3:
-        printf("3> Which of the following is not a roman numeral?\n");
-        printf("(2)L\t\t\t\t(3)G \n");
-        break;
-        case 4:
-        printf("4> A cranky person is said to have gotten up 'on the wrong side of the' what?\n");
-        printf("(1)Bed\t\t\t\t (2)Bam \n");
-        break;
-        case 5:
-        printf("5> What would you measure on the beaufort scale?\n");
-        printf("(2)Wind Speed\t\t\t\t(3)Precipitation \n");
-        break;
-        case 6:
-        printf("6> Which of the following men does not have a chemical element named for him?\n");
-        printf("(1)Albert Einstein\t\t\t\t (2)Issac Newton \n");
-        break;
-        case 7:
-        printf("7> Which of the following is not among the four fundamental forces of nature?\n");
-        printf("(1)Gravity\t\t\t\t (2)Friction \n");
-        break;
-        case 8:
-        printf("8> Which of the following was a literary movement in the U.S. during the 1920s\n");
-        printf("(2)Romanticism\t\t\t\t (3)Harlem Renaissance \n");
-        break;
-        case 9:
-        printf("9> According to Hindu mythology, who is the charioteer of the sun?\n");
-        printf("(3)Jalandhar\t\t\t\t (4)Arun \n");
-        break;
-        case 10:
-        printf("10> 'do no evil' is tagline of which company?\n");
-        printf("(1)Google\t\t\t\t (4)Apple \n");
-        break;
-        case 11:
-        printf("11> After nearly 70 days underground,33 men were dramatically rescued in 2010 from a mine in what country?\n");
-        printf("(1)Chile\t\t\t\t (2)India \n");        
-        case 12:
-        printf("12> Aristotle wrote that what animal, though immune from other illnesses, is occasionally subject to “flatulency”?\n");
-        printf("(1)Elephant\t\t\t\t (3)Kangaroo \n");
-        break;
-        case 13:
-        printf("Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
-        printf("(1)Harper Lee\t\t\t\t(3)Emily Bronte \n");
-        break;
-    }
-}
-
 void check_availablity(int count)/*keeps track of lifelines used and the one left*/
 {
     printf("The lifelines available to you are:-\n");
@@ -181,6 +181,7 @@ void check_availablity(int count)/*keeps track of lifelines used and the one lef
         printf("SorryYou have consumed all your lifelines");
     
 }
+
 int update_lifelines(int temp1,int n)
 {/*stores the used lifeline in the cache to prevent further usage*/
     if(temp1==1)
@@ -190,12 +191,14 @@ int update_lifelines(int temp1,int n)
     n=n-1;
     return n;
 }
+
 int leave()
 {/*asking the user if he/she wishes to leave the game with accrued earnings*/
     int quit;
     scanf("%d",&quit);
     return quit;
 }
+
 void lifeline(int lfline,int q,int *j)/*mechanism to implement lifelines and direct the flow of args into the question_bank function*/
 {/*lfline is the lifeline chosen*/
     /*q is the present question number*/
@@ -218,6 +221,7 @@ void lifeline(int lfline,int q,int *j)/*mechanism to implement lifelines and dir
         question_bank(13,lfline);
     }
 }
+
 int check_ans(int ch,int n,int *temp)/*function for checking the answer given and returning the next question number or*/
 {/*incrementing the given question number by 13 to throw the control out of the game*/
     /*ch-chosen option,n-question number, temp-pointer to the base address of array containing lifelines used for the given question*/
@@ -238,6 +242,7 @@ int check_ans(int ch,int n,int *temp)/*function for checking the answer given an
     return n;
         
 }
+
 void prize_money(int qtn)
 {
     int breakpoints[]={0,4,8,12};/*checkpoints*/
@@ -263,6 +268,7 @@ void clear_arr(int *arr)/*resets the cache array handling the lifelines used dur
     for(int i=0;i<2;i++)
         *(arr+i)=0;
 }
+
 void game_mech()
 {
     int quit=0;/* for checking if user wishes to quit or not*/
@@ -326,6 +332,7 @@ void game_mech()
     else if(i>=12)/*wrong answer increments the question number by 13,winning the game leads to no change in control variable*/
         prize_money(i);
 }
+
 void main()/*MAIN method*/
 {
     int x=1;
