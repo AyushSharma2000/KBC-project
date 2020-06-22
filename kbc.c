@@ -317,20 +317,30 @@ void game_mech()
                 }
             else
                 i=check_ans(ch,i,&life[0]);
+                if(i>=13)
+                {      printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
+                       break;
+                }
+                        
+                else{
+                        printf("\nCorrect answer!!! \n");
+                        printf("Congratulations on winning a sum of \t");
+                        prize_money(i-1);
+                }
             if(check==1)
                 break;
-        if(i<=12)
-            printf("\nCorrect answer!!! \n");
+        /*if(i<=12)
+            printf("\nCorrect answer!!! \n");*/
     }
-    if(i>13)
+    /*if(i>13)
         printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
     else{
         printf("Congratulations on winning a sum of \t");
-        
-    }if(quit==1)/*quitting causes incrementation of 1,handling this*/
+    }  */  
+    if(quit==1)/*quitting causes incrementation of 1,handling this*/
         prize_money(i-1);
     else if(i>=12)/*wrong answer increments the question number by 13,winning the game leads to no change in control variable*/
-        prize_money(i);
+            prize_money(i);
 }
 
 void main()/*MAIN method*/
