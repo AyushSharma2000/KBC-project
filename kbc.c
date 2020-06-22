@@ -39,15 +39,7 @@ while(i<total_questions)/*displays the total questions and the corresponding amo
     printf("3)You cannot quit the game after choosing to take a lifeline\n");
     printf("4)To answer a particular question,press the number corresponding to the option of your choice and then enter key\n\n");
     printf("Press Y to begin the game. . ."); 
-    printf("\nYou have the following life lines available:-\n");
-    printf("1) 50/50 which means two wrong options will be removed from the list of options on the screen \n");
-    printf("2) Flip the question which will allow you to change the current question with a new one");
-    printf("\n\t\t\t\t**************GENERAL GUIDLINES**************\n");
-    printf("1)All lifelines can be used only once\n");
-    printf("2)If your answer of a question is incorrect then you will be entitled to the amount of money agreed upon on the last checkpoint\n");
-    printf("3)You cannot quit the game after choosing to take a lifeline\n");
-    printf("4)To answer a particular question,press the number corresponding to the option of your choice and then enter key\n\n");
-    printf("Press Y to begin the game. . ."); 
+   
     
 }
 
