@@ -15,13 +15,13 @@ void first_screen()/*displays the number of questions,prize for each question,ch
     int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};
     printf("\n");
     printf("\n");
-    while(i<total_questions)/*displays the total questions and the corresponding amount winnable*/
+while(i<total_questions)/*displays the total questions and the corresponding amount winnable*/
     {   int question_no=i+1;
         if(question_no!=4 && question_no!=8 && question_no!=12)/*checkpoints at Question number 4 and 8.12th question is the last one*/
-            printf("QUESTION NUMBER %d valued at Rs. %d\n" ,question_no,prize_arr[question_no]);
+            printf("Answering all questions till QUESTION NUMBER %d gets you a total winnings of Rs. %d\n" ,question_no,prize_arr[question_no]);
         else    /*checkpoints at 4th and 8th question, 12th is last question*/
         {
-            printf("QUESTION NUMBER %d valued at Rs. %d" ,question_no,prize_arr[question_no]);
+            printf("Answering all questions till QUESTION NUMBER %d gets you a total winnings of Rs. %d\n" ,question_no,prize_arr[question_no]);
             printf("\n");
             if(question_no!=12)
             printf("——————————CHECKPOINT——————————\n");
@@ -30,6 +30,18 @@ void first_screen()/*displays the number of questions,prize for each question,ch
         }
         i+=1;
     }
+    printf("\nYou have the following life lines available:-\n");
+    printf("1) 50/50 which means two wrong options will be removed from the list of options on the screen \n");
+    printf("2) Flip the question which will allow you to change the current question with a new one");
+    printf("\n\t\t\t\t**************GENERAL GUIDLINES**************\n");
+    printf("1)All lifelines can be used only once\n");
+    printf("2)If your answer of a question is incorrect then you will be entitled to the amount of money agreed upon on the last checkpoint\n");
+    printf("3)You cannot quit the game after choosing to take a lifeline\n");
+    printf("4)To answer a particular question,press the number corresponding to the option of your choice and then enter key\n\n");
+    printf("Press Y to begin the game. . ."); 
+    
+}
+
     printf("\nYou have the following life lines available:-\n");
     printf("1) 50/50 which means two wrong options will be removed from the list of options on the screen \n");
     printf("2) Flip the question which will allow you to change the current question with a new one");
@@ -159,7 +171,8 @@ void question_bank(int num,int lf)/*main question bank for accessing questions a
         printf("13> Which author’s first and only novel was awarded the Pulitzer Prize in fiction?\n");
         printf("(1)Harper Lee\t\t\t\t (2)Ralph Elison\n(3)Emily Bronte\t\t\t\t (4)J.D.Salinger \n");
         break;
-    }}
+    }
+    }
 }
 
 void check_availablity(int count)/*keeps track of lifelines used and the one left*/
@@ -283,65 +296,85 @@ void game_mech()
 
         clear_arr(&life[0]);/*for clearing the array*/
         question_bank(i,0);
-        if(i!=1){
-        printf("Do you want to quit and take the amount accrued or play on? Press 0 or 1 to choose the respective option: ");
-        if(leave()==0){
-            quit=1;
-            break;}}
-        if(count_lifeline>0)
-        {printf("Do you want to take a life line-0 for NO and 1 for YES ");
-            scanf("%d",&temp);}
-        while(count_lifeline>0 && temp==1)
+        printf("\n")
+        if(i!=1)
+        {
+            printf("Do you want to quit and take the amount accrued OR play on? Press 0 or 1 to choose the respective option: ");
+            if(leave()==0)
             {
-                check_availablity(count_lifeline);/*checks for lifelines,handles user input for */
-                scanf("%d",&temp1);      /*which lifeline to use,option of multiple*/
-                life[temp1-1]=temp1;
-                count_lifeline=update_lifelines(temp1,count_lifeline);/*lifelines provided*/
-                lifeline(temp1,i,&life[0]);
-                if (count_lifeline==1)
-                {
-                    printf("Do you want another lifeline?? Press 0 for NO 1 for YES\n");
-                    scanf("%d",&temp);
-                }
-            }
-            int check=0;
-        printf("Enter your answer: ");
-            scanf("%d",&ch);
-            printf("%d",ch);
-            if(i==12)/*handling special case scenario of player winning the game*/
-                {i=check_ans(ch,i,&life[0]);
-                 if(i==13)
-                    {check=1;
-                     i=i-1;
-                    }
-                }
-            else
-                i=check_ans(ch,i,&life[0]);
-                if(i>=13)
-                {      printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
-                       break;
-                }
-                        
-                else{
-                        printf("\nCorrect answer!!! \n");
-                        printf("Congratulations on winning a sum of \t");
-                        prize_money(i-1);
-                }
-            if(check==1)
+                quit=1;
                 break;
-        /*if(i<=12)
-            printf("\nCorrect answer!!! \n");*/
+            }
+            
+        }
+        
+        if(count_lifeline>0)
+        {   
+            printf("Do you want to take a life line-0 for NO and 1 for YES ");
+            scanf("%d",&temp);
+            printf("\n");
+        }
+        
+        while(count_lifeline>0 && temp==1)
+        {
+            check_availablity(count_lifeline);/*checks for lifelines,handles user input for */
+            scanf("%d",&temp1);      /*which lifeline to use,option of multiple*/
+            life[temp1-1]=temp1;
+            count_lifeline=update_lifelines(temp1,count_lifeline);/*lifelines provided*/
+            lifeline(temp1,i,&life[0]);
+            
+            if (count_lifeline==1)
+            {
+                printf("Do you want another lifeline?? Press 0 for NO 1 for YES\n");
+                scanf("%d",&temp);
+            }
+        }
+        int check=0;
+        printf("Enter your answer: ");
+        scanf("%d",&ch);
+        printf("%d",ch);
+        
+        if(i==12)/*handling special case scenario of player winning the game*/
+        {
+            i=check_ans(ch,i,&life[0]);
+            if(i==13)
+            {
+                check=1;
+                i=i-1;
+            }
+            if(check==1)
+               break;
+            }
+                
+        else
+            i=check_ans(ch,i,&life[0]);
+        
+        if(i>=13)
+        {      
+            printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
+            prize_money(i-1);
+            break;
+        }
+                        
+        else
+        {
+            printf("\nCorrect answer!!! \n");
+            printf("You are entitled to a total sum of \t");
+            if(i==12)
+                prize_money(i);
+            else
+                prize_money(i-1);
+            printf("\n");
+        }
     }
-    /*if(i>13)
-        printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
-    else{
-        printf("Congratulations on winning a sum of \t");
-    }  */  
+    
     if(quit==1)/*quitting causes incrementation of 1,handling this*/
+    {   
+        printf("Your total winnings are \t");
         prize_money(i-1);
-    else if(i>=12)/*wrong answer increments the question number by 13,winning the game leads to no change in control variable*/
-            prize_money(i);
+    }
 }
+
 
 void main()/*MAIN method*/
 {
