@@ -331,7 +331,7 @@ void game_mech()
             prize_money(i-1);
             printf("\n");
             if((i-1)==4 || (i-1)==8)
-                printf("\nCongratulations on crossing  checkpoint %d \n",((i-1)/4));
+                printf("\nCongratulations on crossing  checkpoint %d \n\n\n",((i-1)/4));
         }
     }
     
