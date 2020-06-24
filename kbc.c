@@ -1,6 +1,6 @@
 #include <stdio.h>
-char lfarr[]={'5','F'};
-char cache[2];
+char lfarr[]={'5','F'};/*to keep track of lifelines available*/
+char cache[2];/*to keep track of lifelines used*/
 void first_screen()/*displays the number of questions,prize for each question,checkpoints and other guidelines*/
 {
     printf("\t\t\t\t********************************************************************");
