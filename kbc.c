@@ -259,7 +259,7 @@ void prize_money(int qtn)
             prize=prize_arr[breakpoints[i]];
     }
     }
-    printf("Rs. %d",prize);
+    return prize;
         
 }
 
