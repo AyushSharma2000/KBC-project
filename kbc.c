@@ -32,7 +32,7 @@ void first_screen()/*displays the number of questions,prize for each question,ch
     }
     printf("\nYou have the following life lines available:-\n");
     printf("1) 50/50 which means two wrong options will be removed from the list of options on the screen \n");
-    printf("2) Flip the question which will allow you to change the current question with a new one");
+    printf("2) Flip the question which will allow you to change the current question with a new one\n\n\n\n");
     printf("\n\t\t\t\t**************GENERAL GUIDLINES**************\n");
     printf("1)All lifelines can be used only once\n");
     printf("2)If your answer of a question is incorrect then you will be entitled to the amount of money agreed upon on the last checkpoint\n");
