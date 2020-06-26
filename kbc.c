@@ -243,7 +243,7 @@ int check_ans(int ch,int n,int *temp)/*function for checking the answer given an
         
 }
 
-void prize_money(int qtn)
+int prize_money(int qtn)
 {
     int breakpoints[]={0,4,8,12};/*checkpoints*/
     int prize;
@@ -319,16 +319,14 @@ void game_mech()
         i=check_ans(ch,i,&life[0]);
         if(i>13)
         {      
-            printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of  \t");
-            prize_money(i-1);
+            printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of \t %d",prize_money(i-1));
             break;
         }
                         
         else
         {
             printf("\nCorrect answer!!! \n");
-            printf("You are entitled to a total sum of \t");
-            prize_money(i-1);
+            printf("You are entitled to a total sum of \t%d",prize_money(i-1));
             printf("\n");
             if((i-1)==4 || (i-1)==8)
                 printf("\nCongratulations on crossing  checkpoint %d \n\n\n",((i-1)/4));
@@ -336,7 +334,7 @@ void game_mech()
     }
     
     if(quit==1)/*quitting causes incrementation of 1,handling this*/
-        prize_money(i-1);
+        printf("You have won a total sum of \t %d",prize_money(i-1));
     else if(i==13)/*wrong answer increments the question number by 13,winning the game leads to no change in control variable*/
             printf("\n\n\nCongratulations on successfully completing the KBC Game!!!!\n");
 }
