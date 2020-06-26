@@ -38,7 +38,7 @@ void first_screen()/*displays the number of questions,prize for each question,ch
     printf("2)If your answer of a question is incorrect then you will be entitled to the amount of money agreed upon on the last checkpoint\n");
     printf("3)You cannot quit the game after choosing to take a lifeline\n");
     printf("4)To answer a particular question,press the number corresponding to the option of your choice and then enter key\n\n");
-    printf("Press Y to begin the game. . ."); 
+    printf("Press any key to begin the game. . ."); 
     
 }
 
@@ -209,13 +209,13 @@ void lifeline(int lfline,int q,int *j)/*mechanism to implement lifelines and dir
         question_bank(q,lfline);
     }
     
-    else if (lfline==1 && *(j+1)==2)
+    else if (lfline==1 && *(j+1)==2)/*handling 50-50 lifeline when invoked for Q.13(obtained after using Flipping the Question lifeline)*/
     {
         printf("We shall remove two of the wrong options %d\n\n\n\n",*(j+1));
         question_bank(13,lfline);/*13 is passed as arg instead of q as we are over-riding the normal mechanism by flipping the question*/
     }
     
-    else 
+    else /*invoking the flip the question lifeline*/
     {
         printf("The question will be flipped\n\n\n\n");
         question_bank(13,lfline);
@@ -228,11 +228,11 @@ int check_ans(int ch,int n,int *temp)/*function for checking the answer given an
     int ans[]={1,2,3,1,2,2,2,3,4,1,1,1,1};/*answer key*/
     if(*(temp+1)==2){/*checking for the 13th question's answer if flip the question has been invoked*/
     if(ch!=ans[12])
-        n=n+13;
+        n=n+13;/*increments the question number by 13 if wrong answer inputted to come out loop handling the game*/
     else
-        n=n+1;
+        n=n+1;/*correct answer keeps the control in the loop*/
     }
-    else
+    else/*for questions till Q.12*/
     {
         if(ch!=ans[n-1])
             n=n+13;
@@ -250,9 +250,9 @@ int prize_money(int qtn)
     int orig_no;
     int prize_arr[]={0,5000,20000,80000,320000,640000,1250000,2500000,5000000,10000000,25000000,50000000,70000000};/*prize money for each question*/
     if(qtn<=12)
-        prize=prize_arr[qtn];/*prize money corresponding to the last question if player leaves voluntarily or wins*/
+        prize=prize_arr[qtn];/*prize money corresponding to the last question or if player leaves voluntarily*/
     else{
-        orig_no=qtn-13;
+        orig_no=qtn-13;/*since the question number increments by 13 so reducing it for easy handling of prize money allocation*/
     for(int i=0;i<=3;i++)
     {
         if(orig_no>=breakpoints[i])/*highest breakpoint below the question number,if wrong answer inputted*/
@@ -276,15 +276,14 @@ void game_mech()
     int count_lifeline=2;
     int i=1;
     for(;i<=12;)
-    {
-        int count=0;
-        int ch,temp1,temp;
+    {/*i is the counter variable for the question number*/
+        int ch,temp1,temp;/*temp handles the user input regarding whether the user wants to opt for a lifeline,temp1 handles the input for choice of lifeline*/
         int life[2];/*cache for lifelines invoked for a given question,cleared after every iteration*/
 
         clear_arr(&life[0]);/*for clearing the array*/
         question_bank(i,0);
         printf("\n");
-        if(i!=1)
+        if(i!=1)/*asks whether the user wants to quit if the question number!=1*/
         {
             printf("Do you want to quit and take the amount accrued OR play on? Press 0 or 1 to choose the respective option: ");
             if(leave()==0)
@@ -317,13 +316,14 @@ void game_mech()
         printf("Enter your answer: ");
         scanf("%d",&ch);
         i=check_ans(ch,i,&life[0]);
+        /*if a wrong answer is entered, the question number increments by 13 thus removing the control from the game and displays the prize money*/
         if(i>13)
         {      
             printf("\nSorry. You inputted a wrong answer. You will be awarded a sum of \t %d",prize_money(i-1));
             break;
         }
                         
-        else
+        else/*correct answer increments the value of question number by one*/
         {
             printf("\nCorrect answer!!! \n");
             printf("You are entitled to a total sum of \t%d",prize_money(i-1));
@@ -341,25 +341,15 @@ void game_mech()
 
 void main()/*MAIN method*/
 {
-    int x=1;
     first_screen();
     char ch;
-    scanf("%c",&ch);
-    while (x)
+    scanf("%c",&ch);/*user begins the game by pressing any key*/
+    printf("\nThe game begins in ");
+    for(int i=3;i>0;i--)
     {
-        if (ch=='Y' || ch== 'y')/*keeping it case insensitive but character sensitive*/
-            {
-                printf("\nThe game begins in ");
-                for(int i=3;i>0;i--)
-                    printf("%d . . .",i);
-                x=x-1;
-            }
-            else
-            {
-                printf("Invalid Option. Re-enter");
-                scanf("%c",&ch);
-            }
+       printf("%d . . .",i);
     }
+       
     printf("\n\n\n\n\n");
     game_mech();
     
